@@ -232,7 +232,9 @@ const CreateNotifications = () => {
 								<TextInput
 									label={t("createNotifications.telegramSettings.botTokenLabel")}
 									name="botToken"
-									placeholder={t("createNotifications.telegramSettings.botTokenPlaceholder")}
+									placeholder={t(
+										"createNotifications.telegramSettings.botTokenPlaceholder"
+									)}
 									value={notification.botToken}
 									onChange={onChange}
 									error={Boolean(errors.botToken)}
@@ -241,7 +243,9 @@ const CreateNotifications = () => {
 								<TextInput
 									label={t("createNotifications.telegramSettings.chatIdLabel")}
 									name="chatId"
-									placeholder={t("createNotifications.telegramSettings.chatIdPlaceholder")}
+									placeholder={t(
+										"createNotifications.telegramSettings.chatIdPlaceholder"
+									)}
 									value={notification.chatId}
 									onChange={onChange}
 									error={Boolean(errors.chatId)}
