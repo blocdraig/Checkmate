@@ -84,6 +84,7 @@ import DiscordServiceV2 from "../service/v2/infrastructure/NotificationServices/
 import EmailServiceV2 from "../service/v2/infrastructure/NotificationServices/Email.js";
 import SlackServiceV2 from "../service/v2/infrastructure/NotificationServices/Slack.js";
 import WebhookServiceV2 from "../service/v2/infrastructure/NotificationServices/Webhook.js";
+import TelegramServiceV2 from "../service/v2/infrastructure/NotificationServices/Telegram.js";
 import JobGeneratorV2 from "../service/v2/infrastructure/JobGenerator.js";
 import JobQueueV2 from "../service/v2/infrastructure/JobQueue.js";
 import NetworkServiceV2 from "../service/v2/infrastructure/NetworkService.js";
@@ -241,6 +242,7 @@ export const initializeServices = async ({ logger, envSettings, settingsService 
 	const emailServiceV2 = new EmailServiceV2(userServiceV2);
 	const slackServiceV2 = new SlackServiceV2();
 	const webhookServiceV2 = new WebhookServiceV2();
+	const telegramServiceV2 = new TelegramServiceV2();
 	const networkServiceV2 = new NetworkServiceV2();
 	const statusServiceV2 = new StatusServiceV2();
 	const notificationServiceV2 = new NotificationServiceV2(userServiceV2);
@@ -293,6 +295,7 @@ export const initializeServices = async ({ logger, envSettings, settingsService 
 		slackServiceV2,
 		webhookServiceV2,
 		networkServiceV2,
+		telegramServiceV2,
 		statusServiceV2,
 		notificationServiceV2,
 		jobGeneratorV2,

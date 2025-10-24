@@ -1,10 +1,12 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
-export const ChannelTypes = ["email", "slack", "discord", "webhook"] as const;
+export const ChannelTypes = ["email", "slack", "discord", "webhook", "telegram"] as const;
 export type ChannelType = (typeof ChannelTypes)[number];
 
 export interface INotificationChannelConfig {
 	url?: string; // For webhook, slack, discord
 	emailAddress?: string; // For email
+	botToken?: string; // For telegram
+	chatId?: string; // For telegram
 }
 
 export interface INotificationChannel {
@@ -23,6 +25,8 @@ const NotificationChannelConfigSchema = new Schema<INotificationChannelConfig>(
 	{
 		url: { type: String, required: false },
 		emailAddress: { type: String, required: false },
+		botToken: { type: String, required: false },
+		chatId: { type: String, required: false },
 	},
 	{ _id: false, strict: "throw" }
 );

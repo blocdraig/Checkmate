@@ -7,16 +7,8 @@ import { createToast } from "../../../../Utils/toastUtils.jsx";
 const NOTIFICATION_TYPES = {
 	SLACK: "slack",
 	DISCORD: "discord",
+	WEBHOOK: "webhook",
 	TELEGRAM: "telegram",
-	WEBHOOK: "webhook",
-};
-
-// Define constants for field IDs
-const FIELD_IDS = {
-	WEBHOOK: "webhook",
-	TOKEN: "token",
-	CHAT_ID: "chatId",
-	URL: "url",
 };
 
 /**

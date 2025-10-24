@@ -28,10 +28,10 @@ const NOTIFICATION_TYPES = {
 
 // Define constants for field IDs
 const FIELD_IDS = {
-	WEBHOOK: "webhook",
-	TOKEN: "token",
-	CHAT_ID: "chatId",
-	URL: "url",
+	WEBHOOK: "webhook", // For slack and discord
+	TOKEN: "token", // For telegram
+	CHAT_ID: "chatId", // For telegram
+	URL: "url", // For webhook
 };
 
 const NotificationIntegrationModal = ({

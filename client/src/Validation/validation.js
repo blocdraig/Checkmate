@@ -458,12 +458,12 @@ const notificationValidation = joi.object({
 
 	type: joi
 		.string()
-		.valid("email", "webhook", "slack", "discord", "pager_duty")
+		.valid("email", "webhook", "slack", "discord", "pager_duty", "telegram")
 		.required()
 		.messages({
 			"string.empty": "Notification type is required",
 			"any.required": "Notification type is required",
-			"any.only": "Notification type must be email, webhook, or pager_duty",
+			"any.only": "Notification type must be email, webhook, pager_duty, telegram",
 		}),
 
 	address: joi.when("type", {
@@ -496,6 +496,22 @@ const notificationValidation = joi.object({
 				}),
 			},
 		],
+	}),
+
+	botToken: joi.when("type", {
+		is: "telegram",
+		then: joi.string().required().messages({
+			"string.empty": "Telegram bot token cannot be empty",
+			"any.required": "Telegram bot token is required",
+		}),
+	}),
+
+	chatId: joi.when("type", {
+		is: "telegram",
+		then: joi.string().required().messages({
+			"string.empty": "Telegram chat ID cannot be empty",
+			"any.required": "Telegram chat ID is required",
+		}),
 	}),
 });
 
